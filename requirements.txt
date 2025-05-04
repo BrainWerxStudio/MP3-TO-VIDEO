@@ -1,0 +1,6 @@
+streamlit
+moviepy
+numpy
+matplotlib
+scipy
+pydub
