@@ -1,5 +1,3 @@
-// Blinged-out version of the Music Video Generator frontend UI with animations and styling
-
 import React, { useState } from "react";
 import { CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -7,7 +5,7 @@ import { motion } from "framer-motion";
 import { Music, Film } from "lucide-react";
 
 const videoStyles = [
-  // (same as before, unchanged)
+  // Add your video styles here
 ];
 
 export default function MusicVideoGen() {
@@ -42,7 +40,7 @@ export default function MusicVideoGen() {
 
     setIsLoading(true);
     setGeneratedVideoUrl(null);
-    
+
     setTimeout(() => {
       setIsLoading(false);
       setGeneratedVideoUrl("/mock/generated-video.mp4"); // Mock result
@@ -70,18 +68,16 @@ export default function MusicVideoGen() {
           className="block mx-auto text-sm file:bg-gradient-to-r file:from-pink-500 file:to-blue-600 file:text-white file:px-5 file:py-3 file:rounded-lg file:border-none file:cursor-pointer file:shadow-md"
           aria-label="Upload MP3 file"
         />
-       {file && <p className="mt-3 text-green-400 font-semibold">{'\u{1F3A7}'} Uploaded: {file.name}</p>}
+        {file && <p className="mt-3 text-green-400 font-semibold">{'\u{1F3A7}'} Uploaded: {file.name}</p>}
       </div>
 
-     <h2 className="text-3xl font-bold mb-6 text-center">{'\u{1F525}'} Choose Your Vibe</h2>
+      <h2 className="text-3xl font-bold mb-6 text-center">{'\u{1F525}'} Choose Your Vibe</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {videoStyles.map((style, i) => (
           <motion.div
             key={style.name}
             whileHover={{ scale: 1.05 }}
-            className={`rounded-2xl overflow-hidden border-4 transition-all duration-300 ${
-              selectedStyle?.name === style.name ? "border-pink-500 shadow-xl" : "border-gray-600"
-            }`}
+            className={`rounded-2xl overflow-hidden border-4 transition-all duration-300 ${selectedStyle?.name === style.name ? "border-pink-500 shadow-xl" : "border-gray-600"}`}
             onClick={() => setSelectedStyle(style)}
             onMouseEnter={() => setHovered(i)}
             onMouseLeave={() => setHovered(null)}
@@ -139,7 +135,7 @@ export default function MusicVideoGen() {
 
       {generatedVideoUrl && (
         <div className="mt-10 text-center">
-         <h3 className="text-2xl font-bold mb-4 text-green-400">{'\u{2705}'} Your Video Is Ready!</h3>
+          <h3 className="text-2xl font-bold mb-4 text-green-400">{'\u{2705}'} Your Video Is Ready!</h3>
           <video
             src={generatedVideoUrl}
             controls
@@ -150,13 +146,3 @@ export default function MusicVideoGen() {
     </motion.div>
   );
 }
-
-
-
-
-
-
-
-
-
-
