@@ -1,11 +1,58 @@
 import React, { useState } from "react";
-import { CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Music, Film } from "lucide-react";
+import { Sparkles, Music, Film } from "lucide-react";
 
 const videoStyles = [
-  // Add your video styles here
+  {
+    name: "Urban Glitch",
+    thumbnail: "/thumbnails/glitch.gif",
+    preview: "/previews/glitch.mp4",
+    description: "Edgy, neon, and chaotic. Perfect for trap or electronic beats."
+  },
+  {
+    name: "VHS Retro",
+    thumbnail: "/thumbnails/vhs.gif",
+    preview: "/previews/vhs.mp4",
+    description: "Old-school grain with 90s nostalgia. Best for lofi or synth."
+  },
+  {
+    name: "Anime Visualizer",
+    thumbnail: "/thumbnails/anime.gif",
+    preview: "/previews/anime.mp4",
+    description: "Animated vibes, inspired by AMVs. Ideal for pop or K-rap."
+  },
+  {
+    name: "Dreamscape AI",
+    thumbnail: "/thumbnails/ai.gif",
+    preview: "/previews/ai.mp4",
+    description: "Surreal, AI-generated worlds. Works great with ambient or R&B."
+  },
+  {
+    name: "Cyberpunk City",
+    thumbnail: "/thumbnails/cyberpunk.gif",
+    preview: "/previews/cyberpunk.mp4",
+    description: "Futuristic, neon-lit cityscapes. Works great with synthwave or EDM."
+  },
+  {
+    name: "Street Graffiti",
+    thumbnail: "/thumbnails/graffiti.gif",
+    preview: "/previews/graffiti.mp4",
+    description: "Bold, animated street art. Perfect for hip-hop or underground rap."
+  },
+  {
+    name: "Cosmic Nebula",
+    thumbnail: "/thumbnails/nebula.gif",
+    preview: "/previews/nebula.mp4",
+    description: "Epic space visuals and nebulas. Best for chill, spacey beats."
+  },
+  {
+    name: "Matrix Code",
+    thumbnail: "/thumbnails/matrix.gif",
+    preview: "/previews/matrix.mp4",
+    description: "Code rain, digital effects. Killer for dark techno or cyber themes."
+  }
 ];
 
 export default function MusicVideoGen() {
@@ -29,7 +76,7 @@ export default function MusicVideoGen() {
     }
 
     setFile(uploadedFile);
-    setGeneratedVideoUrl(null); // Reset output if new file is uploaded
+    setGeneratedVideoUrl(null);
   };
 
   const handleGenerate = () => {
@@ -43,7 +90,7 @@ export default function MusicVideoGen() {
 
     setTimeout(() => {
       setIsLoading(false);
-      setGeneratedVideoUrl("/mock/generated-video.mp4"); // Mock result
+      setGeneratedVideoUrl("/mock/generated-video.mp4");
     }, 3000);
   };
 
@@ -68,16 +115,27 @@ export default function MusicVideoGen() {
           className="block mx-auto text-sm file:bg-gradient-to-r file:from-pink-500 file:to-blue-600 file:text-white file:px-5 file:py-3 file:rounded-lg file:border-none file:cursor-pointer file:shadow-md"
           aria-label="Upload MP3 file"
         />
-        {file && <p className="mt-3 text-green-400 font-semibold">{'\u{1F3A7}'} Uploaded: {file.name}</p>}
+        {file && (
+          <p className="mt-3 text-green-400 font-semibold">
+            Uploaded: {file.name}
+          </p>
+        )}
       </div>
 
-      <h2 className="text-3xl font-bold mb-6 text-center">{'\u{1F525}'} Choose Your Vibe</h2>
+      <h2 className="text-3xl font-bold mb-6 text-center">
+        Choose Your Vibe
+      </h2>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {videoStyles.map((style, i) => (
           <motion.div
             key={style.name}
             whileHover={{ scale: 1.05 }}
-            className={`rounded-2xl overflow-hidden border-4 transition-all duration-300 ${selectedStyle?.name === style.name ? "border-pink-500 shadow-xl" : "border-gray-600"}`}
+            className={`rounded-2xl overflow-hidden border-4 transition-all duration-300 ${
+              selectedStyle?.name === style.name
+                ? "border-pink-500 shadow-xl"
+                : "border-gray-600"
+            }`}
             onClick={() => setSelectedStyle(style)}
             onMouseEnter={() => setHovered(i)}
             onMouseLeave={() => setHovered(null)}
@@ -105,8 +163,12 @@ export default function MusicVideoGen() {
                 )}
               </div>
               <div className="mt-3 text-center">
-                <h3 className="text-xl font-semibold text-pink-400">{style.name}</h3>
-                <p className="text-sm text-gray-400 mt-1">{style.description}</p>
+                <h3 className="text-xl font-semibold text-pink-400">
+                  {style.name}
+                </h3>
+                <p className="text-sm text-gray-400 mt-1">
+                  {style.description}
+                </p>
               </div>
             </CardContent>
           </motion.div>
@@ -121,21 +183,23 @@ export default function MusicVideoGen() {
           aria-label="Generate music video"
         >
           {isLoading
-            ? "🔄 Generating..."
+            ? "Generating..."
             : file && selectedStyle
-            ? "🚀 Generate Music Video"
+            ? "Generate Music Video"
             : "Upload & Choose Style"}
         </Button>
         {isLoading && (
           <p className="mt-4 text-yellow-300 animate-pulse">
-            Hold tight... cooking up your visual masterpiece 🎬
+            Hold tight... cooking up your visual masterpiece
           </p>
         )}
       </div>
 
       {generatedVideoUrl && (
         <div className="mt-10 text-center">
-          <h3 className="text-2xl font-bold mb-4 text-green-400">{'\u{2705}'} Your Video Is Ready!</h3>
+          <h3 className="text-2xl font-bold mb-4 text-green-400">
+            Your Video Is Ready!
+          </h3>
           <video
             src={generatedVideoUrl}
             controls
