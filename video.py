@@ -70,7 +70,7 @@ export default function MusicVideoGen() {
           className="block mx-auto text-sm file:bg-gradient-to-r file:from-pink-500 file:to-blue-600 file:text-white file:px-5 file:py-3 file:rounded-lg file:border-none file:cursor-pointer file:shadow-md"
           aria-label="Upload MP3 file"
         />
-        {file && <p className="mt-3 text-green-400 font-semibold">🎧 Uploaded: {file.name}</p>}
+       {file && <p className="mt-3 text-green-400 font-semibold">{'\u{1F3A7}'} Uploaded: {file.name}</p>}
       </div>
 
       <h2 className="text-3xl font-bold mb-6 text-center">🔥 Choose Your Vibe</h2>
@@ -156,26 +156,6 @@ export default function MusicVideoGen() {
 
 
 
-/public
-  └── /previews
-      ├── glitch.mp4
-      ├── vhs.mp4
-      ├── anime.mp4
-      ├── ai.mp4
-      ├── cyberpunk.mp4
-      ├── graffiti.mp4
-      ├── nebula.mp4
-      └── matrix.mp4
-
-  └── /thumbnails
-      ├── glitch.gif
-      ├── vhs.gif
-      ├── anime.gif
-      ├── ai.gif
-      ├── cyberpunk.gif
-      ├── graffiti.gif
-      ├── nebula.gif
-      └── matrix.gif
 
 
 
