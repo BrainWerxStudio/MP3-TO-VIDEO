@@ -68,50 +68,50 @@ st.markdown("""
 video_styles = [
     {
         "name": "Urban Glitch",
-        "thumbnail": "/thumbnails/glitch.gif",
-        "preview": "/previews/glitch.mp4",
+        "thumbnail": "thumbnails/glitch.gif",  # Ensure image is correctly located in the 'thumbnails' folder
+        "preview": "previews/glitch.mp4",
         "description": "Edgy, neon, and chaotic. Perfect for trap or electronic beats."
     },
     {
         "name": "VHS Retro",
-        "thumbnail": "/thumbnails/vhs.gif",
-        "preview": "/previews/vhs.mp4",
+        "thumbnail": "thumbnails/vhs.gif",  # Ensure image is correctly located in the 'thumbnails' folder
+        "preview": "previews/vhs.mp4",
         "description": "Old-school grain with 90s nostalgia. Best for lofi or synth."
     },
     {
         "name": "Anime Visualizer",
-        "thumbnail": "/thumbnails/anime.gif",
-        "preview": "/previews/anime.mp4",
+        "thumbnail": "thumbnails/anime.gif",  # Ensure image is correctly located in the 'thumbnails' folder
+        "preview": "previews/anime.mp4",
         "description": "Animated vibes, inspired by AMVs. Ideal for pop or K-rap."
     },
     {
         "name": "Dreamscape AI",
-        "thumbnail": "/thumbnails/ai.gif",
-        "preview": "/previews/ai.mp4",
+        "thumbnail": "thumbnails/ai.gif",  # Ensure image is correctly located in the 'thumbnails' folder
+        "preview": "previews/ai.mp4",
         "description": "Surreal, AI-generated worlds. Works great with ambient or R&B."
     },
     {
         "name": "Cyberpunk City",
-        "thumbnail": "/thumbnails/cyberpunk.gif",
-        "preview": "/previews/cyberpunk.mp4",
+        "thumbnail": "thumbnails/cyberpunk.gif",  # Ensure image is correctly located in the 'thumbnails' folder
+        "preview": "previews/cyberpunk.mp4",
         "description": "Futuristic, neon-lit cityscapes. Works great with synthwave or EDM."
     },
     {
         "name": "Street Graffiti",
-        "thumbnail": "/thumbnails/graffiti.gif",
-        "preview": "/previews/graffiti.mp4",
+        "thumbnail": "thumbnails/graffiti.gif",  # Ensure image is correctly located in the 'thumbnails' folder
+        "preview": "previews/graffiti.mp4",
         "description": "Bold, animated street art. Perfect for hip-hop or underground rap."
     },
     {
         "name": "Cosmic Nebula",
-        "thumbnail": "/thumbnails/nebula.gif",
-        "preview": "/previews/nebula.mp4",
+        "thumbnail": "thumbnails/nebula.gif",  # Ensure image is correctly located in the 'thumbnails' folder
+        "preview": "previews/nebula.mp4",
         "description": "Epic space visuals and nebulas. Best for chill, spacey beats."
     },
     {
         "name": "Matrix Code",
-        "thumbnail": "/thumbnails/matrix.gif",
-        "preview": "/previews/matrix.mp4",
+        "thumbnail": "thumbnails/matrix.gif",  # Ensure image is correctly located in the 'thumbnails' folder
+        "preview": "previews/matrix.mp4",
         "description": "Code rain, digital effects. Killer for dark techno or cyber themes."
     }
 ]
@@ -141,8 +141,15 @@ with col3:
         if st.image(style["thumbnail"], caption=style["name"], use_column_width=True, key=style["name"]):
             style_selected = style
 
-# If a style is selected, show the description and preview
-if style_selected:
+# Placeholder text if no style is selected
+if not style_selected:
+    st.markdown("""
+    <div style='text-align: center; font-size: 1.5rem; color: #bbb;'>
+        Please select a video style to get started. <br> 
+        Click on a thumbnail to preview and choose a style for your video.
+    </div>
+    """, unsafe_allow_html=True)
+else:
     st.markdown(f"**Description**: {style_selected['description']}")
     st.video(style_selected['preview'])
 
