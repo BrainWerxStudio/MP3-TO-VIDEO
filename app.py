@@ -1,6 +1,6 @@
 import streamlit as st
 import os
-from moviepy.editor import *
+from moviepy.editor import AudioFileClip, ImageClip
 import tempfile
 import numpy as np
 import matplotlib.pyplot as plt
