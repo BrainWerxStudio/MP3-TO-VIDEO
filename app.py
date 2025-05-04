@@ -1,8 +1,14 @@
 import streamlit as st
 import os
+
+# Force MoviePy to use Streamlit Cloud's ffmpeg & ffprobe
 os.environ["IMAGEIO_FFMPEG_EXE"] = "/usr/bin/ffmpeg"
 os.environ["FFMPEG_BINARY"] = "/usr/bin/ffmpeg"
 os.environ["FFPROBE_BINARY"] = "/usr/bin/ffprobe"
+
+# Patch moviepy config manually to stop it from flipping out
+from moviepy.config_defaults import change_settings as moviepy_config
+moviepy_config({"FFMPEG_BINARY": "/usr/bin/ffmpeg"})
 
 from moviepy.editor import AudioFileClip, ImageClip
 import tempfile
@@ -10,6 +16,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.io import wavfile
 from pydub import AudioSegment
+
 
 def create_waveform_video(audio_path, output_path, duration=10):
     # Convert mp3 to wav for waveform analysis
