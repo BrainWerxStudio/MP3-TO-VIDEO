@@ -73,7 +73,7 @@ export default function MusicVideoGen() {
        {file && <p className="mt-3 text-green-400 font-semibold">{'\u{1F3A7}'} Uploaded: {file.name}</p>}
       </div>
 
-      <h2 className="text-3xl font-bold mb-6 text-center">🔥 Choose Your Vibe</h2>
+     <h2 className="text-3xl font-bold mb-6 text-center">{'\u{1F525}'} Choose Your Vibe</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
         {videoStyles.map((style, i) => (
           <motion.div
@@ -139,7 +139,7 @@ export default function MusicVideoGen() {
 
       {generatedVideoUrl && (
         <div className="mt-10 text-center">
-          <h3 className="text-2xl font-bold mb-4 text-green-400">✅ Your Video Is Ready!</h3>
+         <h3 className="text-2xl font-bold mb-4 text-green-400">{'\u{2705}'} Your Video Is Ready!</h3>
           <video
             src={generatedVideoUrl}
             controls
