@@ -45,6 +45,22 @@ st.markdown("""
             background-color: #218838;
             color: #fff;
         }
+        .thumbnail-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .thumbnail-container img {
+            width: 150px;
+            height: auto;
+            margin: 10px;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        .thumbnail-container img:hover {
+            border: 3px solid #ff4b4b;
+        }
     </style>
 """, unsafe_allow_html=True)
 
@@ -104,15 +120,31 @@ video_styles = [
 st.markdown("<h1 style='text-align: center;'>🎬 MP3 ➜ MP4 Video Blaster</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align: center;'>Drop your audio and background, and we'll make a video sexy enough for TikTok or YouTube Shorts.</p>", unsafe_allow_html=True)
 
-# Allow users to choose a video style
+# Display thumbnail previews for styles
 st.markdown("### Choose a Video Style")
-style_options = [style['name'] for style in video_styles]
-selected_style = st.selectbox("Select a Style", style_options)
+style_selected = None
 
-# Display thumbnail and description of the selected style
-style = next(style for style in video_styles if style['name'] == selected_style)
-st.image(style["thumbnail"], caption=f"Style Preview: {style['name']}", use_column_width=True)
-st.write(f"**Description**: {style['description']}")
+# Create a container for style thumbnails
+col1, col2, col3 = st.columns(3)
+
+# Loop through styles and create clickable thumbnails
+with col1:
+    for style in video_styles[:3]:  # Show first 3 styles in the first column
+        if st.image(style["thumbnail"], caption=style["name"], use_column_width=True, key=style["name"]):
+            style_selected = style
+with col2:
+    for style in video_styles[3:6]:  # Show next 3 styles in the second column
+        if st.image(style["thumbnail"], caption=style["name"], use_column_width=True, key=style["name"]):
+            style_selected = style
+with col3:
+    for style in video_styles[6:]:  # Show remaining styles in the third column
+        if st.image(style["thumbnail"], caption=style["name"], use_column_width=True, key=style["name"]):
+            style_selected = style
+
+# If a style is selected, show the description and preview
+if style_selected:
+    st.markdown(f"**Description**: {style_selected['description']}")
+    st.video(style_selected['preview'])
 
 # Upload MP3 and background image
 uploaded_audio = st.file_uploader("🎵 Upload your MP3", type=["mp3"])
@@ -130,7 +162,7 @@ def create_waveform(audio_path):
     plt.close()
     return waveform_path
 
-if uploaded_audio and uploaded_image:
+if uploaded_audio and uploaded_image and style_selected:
     with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as temp_audio:
         temp_audio.write(uploaded_audio.read())
         audio_path = temp_audio.name
