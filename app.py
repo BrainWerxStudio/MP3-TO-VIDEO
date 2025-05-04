@@ -1,5 +1,9 @@
 import streamlit as st
 import os
+os.environ["IMAGEIO_FFMPEG_EXE"] = "/usr/bin/ffmpeg"
+os.environ["FFMPEG_BINARY"] = "/usr/bin/ffmpeg"
+os.environ["FFPROBE_BINARY"] = "/usr/bin/ffprobe"
+
 from moviepy.editor import AudioFileClip, ImageClip
 import tempfile
 import numpy as np
