@@ -66,53 +66,11 @@ st.markdown("""
 
 # Video styles object
 video_styles = [
-    {
-        "name": "Urban Glitch",
-        "thumbnail": "thumbnails/glitch.gif",  # Ensure image is correctly located in the 'thumbnails' folder
-        "preview": "previews/glitch.mp4",
-        "description": "Edgy, neon, and chaotic. Perfect for trap or electronic beats."
-    },
-    {
-        "name": "VHS Retro",
-        "thumbnail": "thumbnails/vhs.gif",  # Ensure image is correctly located in the 'thumbnails' folder
-        "preview": "previews/vhs.mp4",
-        "description": "Old-school grain with 90s nostalgia. Best for lofi or synth."
-    },
-    {
+   {
         "name": "Anime Visualizer",
-        "thumbnail": "thumbnails/anime.gif",  # Ensure image is correctly located in the 'thumbnails' folder
-        "preview": "previews/anime.mp4",
+        "thumbnail": "https://drive.google.com/file/d/1kl73Idu3CSVCk3lOrqBy1q_OEwTNQ3fd/view?usp=drive_link",  # Ensure image is correctly located in the 'thumbnails' folder
+        "preview": "https://drive.google.com/file/d/1e-FFFDndZWaKcQS5iY4uyNFHMD9yixkl/view?usp=drive_link",
         "description": "Animated vibes, inspired by AMVs. Ideal for pop or K-rap."
-    },
-    {
-        "name": "Dreamscape AI",
-        "thumbnail": "thumbnails/ai.gif",  # Ensure image is correctly located in the 'thumbnails' folder
-        "preview": "previews/ai.mp4",
-        "description": "Surreal, AI-generated worlds. Works great with ambient or R&B."
-    },
-    {
-        "name": "Cyberpunk City",
-        "thumbnail": "thumbnails/cyberpunk.gif",  # Ensure image is correctly located in the 'thumbnails' folder
-        "preview": "previews/cyberpunk.mp4",
-        "description": "Futuristic, neon-lit cityscapes. Works great with synthwave or EDM."
-    },
-    {
-        "name": "Street Graffiti",
-        "thumbnail": "thumbnails/graffiti.gif",  # Ensure image is correctly located in the 'thumbnails' folder
-        "preview": "previews/graffiti.mp4",
-        "description": "Bold, animated street art. Perfect for hip-hop or underground rap."
-    },
-    {
-        "name": "Cosmic Nebula",
-        "thumbnail": "thumbnails/nebula.gif",  # Ensure image is correctly located in the 'thumbnails' folder
-        "preview": "previews/nebula.mp4",
-        "description": "Epic space visuals and nebulas. Best for chill, spacey beats."
-    },
-    {
-        "name": "Matrix Code",
-        "thumbnail": "thumbnails/matrix.gif",  # Ensure image is correctly located in the 'thumbnails' folder
-        "preview": "previews/matrix.mp4",
-        "description": "Code rain, digital effects. Killer for dark techno or cyber themes."
     }
 ]
 
