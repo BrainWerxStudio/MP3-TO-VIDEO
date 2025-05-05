@@ -95,7 +95,7 @@ for i, style in enumerate(video_styles):
     with col:
         if st.button(f"{style['name']}", key=style["name"]):
             selected_style = style
-        st.image(style["thumbnail"], caption=style["name"], use_column_width=True)
+        st.image(style["thumbnail"], caption=style["name"], use_container_width=True)
 
 # === PREVIEW SELECTED STYLE ===
 if selected_style:
