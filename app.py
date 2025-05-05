@@ -1,4 +1,5 @@
-import os 
+
+   import os 
 import streamlit as st
 from moviepy.editor import AudioFileClip, ImageClip, TextClip
 import tempfile
@@ -75,43 +76,43 @@ video_styles = [
     {
         "name": "Dreamscape AI",
         "thumbnail": "https://drive.google.com/uc?id=1vNk1tWe4Bz4DTe2gdjzyefzyQX-Q3PQ5",
-        "preview": "https://drive.google.com/uc?id=1BpqyLZ-EvGGbA4yyWpV9EYMQN6qM0av9",
+        "preview": "https://drive.google.com/uc?id=1z9aiuKQloJuBO0mnzGbYNcnw21z83Ndw",
         "description": "Surreal, AI-generated worlds. Works great with ambient or R&B."
     },
     {
         "name": "Cyberpunk City",
         "thumbnail": "https://drive.google.com/uc?id=1aU2oDqX5lEr7xOkwAsgATwgmFKhV8KfD",
-        "preview": "https://drive.google.com/uc?id=1h0yMw_4tmLXnR5AkmQnA1ltxW_RM9DhQ",
+        "preview": "https://drive.google.com/uc?id=1Xfz9DzMJwtW7VLxE5G5yJFXbZemijydD",
         "description": "Futuristic, neon-lit cityscapes. Works great with synthwave or EDM."
     },
     {
         "name": "Street Graffiti",
         "thumbnail": "https://drive.google.com/uc?id=1ZfyZm_Ay-mquuyBpXlwzTZ8ivw2Gi_q9",
-        "preview": "https://drive.google.com/uc?id=1Q6lZZpAWgAfSxHKqXZV1NKD9g38vwU3n",
+        "preview": "https://drive.google.com/uc?id=1CSHAOyOP4RDTQOar8xVyrXuiQM7NeSfs",
         "description": "Bold, animated street art. Perfect for hip-hop or underground rap."
     },
     {
         "name": "Cosmic Nebula",
-        "thumbnail": "https://drive.google.com/uc?id=1uo-UBHPMcQJOGECkHl0A2DfzJxRYDkdP",
-        "preview": "https://drive.google.com/uc?id=1gm9vZbzptJ7K9hYnB5BldhwoiD7OisKC",
+        "thumbnail": "https://drive.google.com/uc?id=1BfiZREooj8C39ePfmrMO4-G6ruuoyBNW",
+        "preview": "https://drive.google.com/uc?id=14cW4B1M2_dnVKB2GJnefJHQyiDxaAEtk",
         "description": "Epic space visuals and nebulas. Best for chill, spacey beats."
     },
     {
         "name": "Matrix Code",
         "thumbnail": "https://drive.google.com/uc?id=1CZOHKlTu1qI4Nh-2H67mwqDlWw3RkCz8",
-        "preview": "https://drive.google.com/uc?id=1px6OhFSuQ0cxOxZEF6-rg97ftn7akED7",
+        "preview": "https://drive.google.com/uc?id=1e-FFFDndZWaKcQS5iY4uyNFHMD9yixkl",
         "description": "Code rain, digital effects. Killer for dark techno or cyber themes."
     },
     {
         "name": "Urban Glitch",
         "thumbnail": "https://drive.google.com/uc?id=1ll7_dJ9Zr18gLjk3D6u_eJxwIkFQKtQZ",
-        "preview": "https://drive.google.com/uc?id=1k6lsE9TZ9zAGwHoDqD7-wTWbGe7B6H71",
+        "preview": "https://drive.google.com/uc?id=1oS5JPDsobTVxiNdDNADZYjQjJjYfb3Sjcosmic nebula",
         "description": "Edgy, neon, and chaotic. Perfect for trap or electronic beats."
     },
     {
         "name": "VHS Retro",
         "thumbnail": "https://drive.google.com/uc?id=1Wq_9L96zxNU5dKOpw64iQ8HbTiiih4pa",
-        "preview": "https://drive.google.com/uc?id=1BQ_NkVbnG2tewHY9zzFwwTf28FzVdzoO",
+        "preview": "https://drive.google.com/uc?id=1eXd_rOi9M6AYF2yY7WOfxnoiZ0kXz3rm",
         "description": "Old-school grain with 90s nostalgia. Best for lofi or synth."
     }
 ]
