@@ -134,7 +134,7 @@ style_selected_name = st.radio(
 style_selected = next(style for style in video_styles if style["name"] == style_selected_name)
 
 # Show preview of selected style
-st.image(style_thumbnails[style_selected_name], caption=style_selected_name, use_column_width=True)
+st.image(style_thumbnails[style_selected_name], caption=style_selected_name, use_container_width=True)
 st.markdown(f"**Description**: {style_selected['description']}")
 st.video(style_selected['preview'])
 
